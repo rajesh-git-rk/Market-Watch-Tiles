@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+body{
+  font-family: 'Open Sans', sans-serif;
+  background: #0046bb;
+  height: 100%;
+  overflow: hidden;
+  /* height: 100vh; */
+  padding: 10px;
+  /* height: calc(100% - 1em); */
+}
+html {
+  height: 100%;
+}
+
+
+header{
+  text-align: center;
+  margin: 25px 0px 20px;
+}
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  max-width:60%;
+    
+}
+.custom-container{
+  background: #fff;
+  border-radius: 30px;
+  margin-bottom: 15px;
+  position: relative;
+  
+}
+.right-content{
+  display: flex;
+  align-items: center;
+  
+  height: 100%;
+}
+
+.right-content img{
+
+  padding-left: 20px;
+}
+.title{
+  color: #0046bb;
+  text-align: center;
+  padding: 25px 10px 10px 10px;
+  
+}
+.title h3{
+  font-size: 22px;
+}
+.title span{
+  font-weight: bold;
+}
+.common-form{
+  padding-left: 30px;
+  padding-bottom: 10px;
+  padding-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    flex-direction: column;
+    height: 100%;
+   position: relative;
+   top:-5%;
+ 
+}
+.common-form .form-label {
+  font-size: 20px;
+  padding-left: 35px;
+  color: #0046bb;
+  margin-bottom: 10px;
+}
+.common-form.form2 .form-label{
+  color: #666;
+  padding-left: 0px;
+  font-size: 13px;
+}
+.text-blue{
+  color: #0046bb !important;
+}
+.common-form.form2 .form-control {
+  padding: 7px;
+  padding-left: 15px;
+}
+.password{
+  position: relative;
+}
+.eye{
+  position: absolute;
+    top: 39px;
+    right: 20px;
+    color: #0046bb;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.common-form .form-control{
+  padding:15px;
+  padding-left: 35px;
+  font-size: 14px;
+  border-radius: 50px;
+  border: 2px solid #0046bb;
+}
+.forgot-unblock{
+  padding: 0 20px;
+}
+.forgot-unblock a{
+  font-size: 12px;
+  color: #999;
+  text-decoration: none;
+}
+.blue-btn{
+  padding: 10px;
+  padding-left: 20px;
+  font-size: 14px;
+  border-radius: 50px;
+  background: #0046bb;
+  text-align: left;
+  position: relative;
+}
+.set-pr{
+  padding-right: 20px;
+}
+.common-form.form2 .blue-btn.set-btn{
+ 
+  text-align: center;
+}
+.form-scroll{
+  max-height: 250px;
+  overflow-y: scroll;
+  padding-right: 20px;
+}
+.blue-btn .icon{
+  position: absolute;
+    right: 20px;
+    font-size: 18px;
+    top: 11px;
+}
+.btn2{
+  padding-right: 20px;
+}
+.account p{
+  color: #fff;
+  text-align: center;
+  font-size: 14px;
+  margin: 0px;
+}
+.account p a{
+  color: #fff;
+  font-weight: bold;
+}
+footer{
+  text-align: center;
+  color: #fff;
+  position: relative;
+
+  
+}
+.ftr-cnt{
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  overflow: hidden;
+ 
+}
+footer.footer2{
+  margin-top: 100px;
+}
+footer p{
+  font-size: 10px;
+}
+.mcx{
+  font-size: 13px;
+}
+.eye.eye2{
+  right: 0 !important;
+}
+.btn-pos{
+margin-top: 50%;
+}
+.no-padding{
+  padding: 0px !important;
+}
+.click-p{
+  color: #999;
+  padding: 0 0px;
+  text-align: center;
+  font-size: 11px;
+}
+.common-form.form2 .form-check .form-check-input:checked+label{
+  color: #0046bb;
+}
+.common-form.form2 .form-check-inline{
+  margin-right: 5px;
+}
+.error{
+ 
+    font-size: 12px;
+    color: red;
+    /* padding-left: 15px; */
+    line-height: 23px;
+}
+
+.tpin .inputs { width: 12%; padding: 4px; margin: 0 3% 0 0; border: 2px solid #0046bb; border-radius: 5px; text-align: center; }
+.tpin .inputs.error{
+  border:2px solid red;
+}
+@media screen and (max-width: 1024px) {
+  .common-form{
+    padding-left: 0px;
+    margin: 0px;
+  }
+  .logo img{
+    width: 150px;
+  }
+  body{
+    padding: 0px;
+  }
+  .common-form.form2 .form-check-inline label{
+    font-size: 12px;
+  }
+  
+  
+ 
+  .common-form  .mb-5{
+    margin-bottom: 25px !important;
+  }
+  
+  .forgot-unblock a{
+    font-size: 13px;
+  }
+  
+  .account p{
+    font-size: 16px;
+  }
+  .set-pr{
+    padding-right: 0px;
+  }
+}
+@media screen and (max-width: 767px) {
+.container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+  max-width: 90% ;
+    
+}
+.ftr-cnt{
+  position: relative;
+  top:50px;
+}
+
+}
+@media screen and (max-width: 580px) {
+  body{
+   overflow: auto;
+  }
+  .common-form .form-label{
+    padding-left: 10px;
+  }
+  .forgot-unblock{
+    padding: 0 15px;
+  }
+  header {
+   
+    margin: 0px 0px 20px;
+}
+.logo img{
+  width: 170px;
+}
+
+}
+

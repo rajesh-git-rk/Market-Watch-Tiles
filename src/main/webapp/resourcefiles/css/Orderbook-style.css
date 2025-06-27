@@ -1,0 +1,337 @@
+
+
+.downloadbtn{	
+  background-color: DodgerBlue;
+  border: none;
+  color: white;
+  margin-left: 25%;
+  padding: 12px 30px;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.global-footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  padding: 1em
+}
+
+
+.converttomisbutton{
+	font-size: 11px;
+    width: auto;
+    color: white;
+    height: fit-content;
+    background-color: #3FBC8A;
+    margin-bottom: 6px;
+    font-family: 13px Roboto, "Helvetica Neue",sans-serif;
+}
+
+
+/* Rajesh code */
+
+
+
+  .modal-header { 
+  background:#007BFF;
+}
+
+.toggle-btn{
+width:50px;
+height:20px;
+margin-left:50px;
+background:green;
+border-radius:10px;
+padding:5px;
+transistion:all 300ms ease-in-out;
+}
+
+.toggle-btn >.inner-circle{
+width:10px;
+height:10px;
+background:white;
+border-radius:50%;
+transistion:all 300ms ease-in-out;
+}
+
+
+
+.toggle-btn.active{
+background:red;
+}
+
+.toggle-btn.active >.inner-circle{
+margin-left:30px;
+}
+
+.stockhead {
+margin-left: -8%;
+margin-top: -5%; 
+padding-left:0%;
+text-align:center;
+color: white;
+font-size: 14px;
+font-family: "Helvetica Neue",sans-serif;
+}
+/* buy-sell order window bg clickable  START */
+
+.background-clickable{
+    pointer-events:none;
+}
+.cancelbtn{
+height:43px;
+width:120px;
+ color: #8492A6;  
+ font-size: 14px;
+ background-color: white; 
+border:thin solid black;
+font-family:   Helvetica Neue,sans-serif; 
+} 
+.fonts{
+color:black;
+font-size: 13px;
+font-family: "Helvetica Neue",sans-serif;	
+}
+.fonts_13{
+color:white;
+font-size: 13px;
+font-family: "Helvetica Neue",sans-serif;	
+}
+.fonts_1{
+font-size: 10px;
+font-family: "Helvetica Neue",sans-serif;	
+font-weight: normal;
+}
+.fonts_14{
+font-size: 14px;
+font-family: "Helvetica Neue",sans-serif;	
+font-weight: normal;
+}
+.fonts_12{
+font-size: 12px;
+font-family: "Helvetica Neue",sans-serif;	
+font-weight: normal;
+}
+
+.stockExpiryhead {
+margin-left: -9%;
+margin-top:2%; 
+padding-left:5%;
+text-align:center;
+color: white;
+font-size: 14px;
+font-family: "Helvetica Neue",sans-serif;
+}
+
+.stockdeletebtn{
+width:18%;
+height:25%;
+margin:3px;
+font-size: 10px;
+font-family: 15px Roboto, "Helvetica Neue",sans-serif;
+border:thin solid red;
+background-color: white;
+border-radius: 2px;
+}
+
+.stockbuybtn{
+width:18%;
+height:25%;
+margin:3px;
+font-size: 10px;
+font-family: 15px Roboto, "Helvetica Neue",sans-serif;
+border:thin solid green;
+background-color: white;
+border-radius: 2px;
+}
+.stocksellbtn{
+width:18%;
+height:25%;
+margin:3px;
+font-size: 10px;
+font-family: 15px Roboto, "Helvetica Neue",sans-serif;
+border:thin solid red;
+background-color: white;
+border-radius: 2px;
+}  
+.stockbuybtn:hover {
+  background-color: #3FBC8A;
+  color: white;
+  font-family: 15px Roboto, "Helvetica Neue",sans-serif;
+}
+.stocksellbtn:hover {
+  background-color: #E55C5C;
+  color: white;
+  font-family: 15px Roboto, "Helvetica Neue",sans-serif;
+} 
+
+
+ .buysubmitgreen{
+height:43px;
+width:118px;
+color: #FFFFFFF;
+background-color: #3FBC8A;
+font-family: 13px Roboto, "Helvetica Neue",sans-serif;
+}
+.sellsumbmitred{
+height:43px;
+width:118px;
+color: #FFFFFFF;
+background-color: #E55C5C;
+font-family: 13px Roboto, "Helvetica Neue",sans-serif;
+}
+
+
+/* The body should display under the header */
+.captionclass{
+    padding: 10px;
+    caption-side: bottom;
+
+}
+
+
+/*
+    stock buy/sell/chart etc., menu bar
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+*:focus,
+*:active {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent;
+}
+/*
+html,
+body {
+  display: grid;
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  place-items: center;
+  background: linear-gradient(315deg, #ffffff, #d7e1ec);
+} 
+*/
+.wrapwrapper {
+  position: relative;
+  display: grid;
+  height: 100%;
+  width: 100%;
+  font-family: "Poppins", sans-serif;
+  place-items: center;
+  /*background: linear-gradient(315deg, #ffffff, #d7e1ec);*/
+}
+.wrapper {
+  display: inline-flex;
+}
+
+.wrapper .icon {
+  position: relative;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 15px;
+  margin: 10px;
+  width: 15px;
+  height: 15px;
+  font-size: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip {
+  position: absolute;
+  top: 0;
+  font-size: 14px;
+  background-color: #ffffff;
+  color: #ffffff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .tooltip::before {
+  position: absolute;
+  z-index:100;
+  content: "";
+  height: 8px;
+  width: 8px;
+  background-color: #ffffff;
+  bottom: -3px;
+  left: 50%;
+  transform: translate(-50%) rotate(45deg);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.wrapper .icon:hover .tooltip {
+  top: -45px;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.wrapper .icon:hover span,
+.wrapper .icon:hover .tooltip {
+  text-shadow: 0px -1px 0px rgba(0, 0, 0, 0.1);
+}
+
+.wrapper .facebook:hover,
+.wrapper .facebook:hover .tooltip,
+.wrapper .facebook:hover .tooltip::before {
+  background-color: #46c1f6;
+  color: #ffffff;
+}
+
+.wrapper .twitter:hover,
+.wrapper .twitter:hover .tooltip,
+.wrapper .twitter:hover .tooltip::before {
+  background-color: #e1306c;
+  color: #ffffff;
+}
+
+.wrapper .instagram:hover,
+.wrapper .instagram:hover .tooltip,
+.wrapper .instagram:hover .tooltip::before {
+  background-color: #46c1f6;
+  color: #ffffff;
+}
+
+.wrapper .github:hover,
+.wrapper .github:hover .tooltip,
+.wrapper .github:hover .tooltip::before {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.wrapper .youtube:hover,
+.wrapper .youtube:hover .tooltip,
+.wrapper .youtube:hover .tooltip::before {
+  background-color: #de463b;
+  color: #ffffff;
+}
+
+.b-buy-b:before {
+    content: "B";
+}
+
+.s-sell-s:before {
+    content: "S";
+}
+.c-chart-c:before {
+    content: "C";
+}

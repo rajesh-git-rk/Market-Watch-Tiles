@@ -1,0 +1,58 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "name": "<span class='watchlist'>GOLD1</span><small><span>NSE</span> <span>EQ</span> <span>MARKET</span></small>",
+            "sellbuybtn": "<button type='button' class='btn btn-lightBlue btn-showbuysell' data-modal-type='buy'>Buy </button>",
+            "qty": "10",
+            "product": "Intraday",
+            "price": "51,030.00",
+            "LTP": "77,839.00",
+            "mtm": "<span class='tp_red'>-1,800.00</span>",
+            "btncolpse": "<button type='button' class='btn btn-secondary'><i class='bi bi-three-dots-vertical'></i> </button>",
+            "busellStatus": "buy",
+            "status2Value": "completed",
+            "status2Msg": "",
+            "placedby": "AB100200",
+            "pAndL": "<span class='tp_red'>-1,800.00</span>",
+            "buyAvgPrice": "51,030.00",
+            "sellAvgPrice": "51,030.00"
+        },
+        {
+            "id": "2",
+            "name": "<span class='watchlist'>GOLD1</span><small><span>NSE</span> <span>EQ</span> <span>MARKET</span></small>",
+            "sellbuybtn": "<button type='button' class='btn btn-red btn-showbuysell' data-modal-type='buy'>Sell </button>",
+            "qty": "10",
+            "product": "Intraday",
+            "price": "51,030.00",
+            "LTP": "77,839.00",
+            "mtm": "<span class='tp_red'>-1,800.00</span>",
+            "btncolpse": "<button type='button' class='btn btn-secondary'><i class='bi bi-three-dots-vertical'></i> </button>",
+            "busellStatus": "buy",
+            "status2Value": "completed",
+            "status2Msg": "",
+            "placedby": "AB100200",
+            "pAndL": "<span class='tp_red'>-1,800.00</span>",
+            "buyAvgPrice": "51,030.00",
+            "sellAvgPrice": "51,030.00"
+        },
+        {
+            "id": "3",
+            "name": "<span class='watchlist'>GOLD1</span><small><span>NSE</span> <span>EQ</span> <span>MARKET</span></small>",
+            "sellbuybtn": "<button type='button' class='btn btn-lightBlue btn-showbuysell' data-modal-type='buy'>Buy </button>",
+            "qty": "10",
+            "product": "Intraday",
+            "price": "51,030.00",
+            "LTP": "77,839.00",
+            "mtm": "<span class='tp_red'>-1,800.00</span>",
+            "btncolpse": "<button type='button' class='btn btn-secondary'><i class='bi bi-three-dots-vertical'></i> </button>",
+            "busellStatus": "buy",
+            "status2Value": "completed",
+            "status2Msg": "",
+            "placedby": "AB100200",
+            "pAndL": "<span class='tp_red'>-1,800.00</span>",
+            "buyAvgPrice": "51,030.00",
+            "sellAvgPrice": "51,030.00"
+        }
+    ]
+}

@@ -1,5 +1,13 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=0d6fa5a7d730710f8e71b0d6090a9119d6147ea4
 eclipse.preferences.version=1
 encoding//src/main/java=UTF-8
 encoding//src/main/resources=UTF-8
-encoding//src/test/java=UTF-8
+encoding//src/main/webapp/WEB-INF/views/jsp/Funds.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/jsp/OptionChain.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/jsp/Portfolio.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/jsp/login.jsp=UTF-8
+encoding//src/main/webapp/WEB-INF/views/jsp/maincontent.jsp=UTF-8
+encoding//src/main/webapp/resourcefiles/AccessJs/resources=UTF-8
 encoding/<project>=UTF-8

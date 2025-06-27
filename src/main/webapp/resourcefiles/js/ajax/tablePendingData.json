@@ -1,0 +1,122 @@
+{
+    "data": [
+        {
+            "id": "1",
+            "name": "<span class='watchlist'>GOLD</span><small><span>NSE</span> <span>EQ</span> <span>MARKET</span></small>",
+            "sellbuybtn": "<button type='button' class='btn btn-lightBlue btn-status'>Buy</button>",
+            "qty": "10",
+            "product": "Intraday",
+            "price": "51,030.00",
+            "triggerPrice": "0.00",
+            "status": "<span class='highlight'>Pending</span>",
+            "LTP": "77,839.00",
+            "avgPrice": "77,800.00",
+            "btncolpse": "<div class='btn-group dropstart'> <button type='button' class='btn btn-secondary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'><i class='bi bi-three-dots-vertical'></i> </button> <ul class='dropdown-menu dd-top'> <li> <button type='button' class='modify-btn btn btn-showbuysell' data-modal-type='buy'>Modify</button> </li> <li> <div class='convert dropdown'><button type='button' class='cancel-btn btn dropdown-toggle' id='dropdownMenuButton1' data-bs-toggle='dropdown'  data-bs-auto-close='false'  class='cancel-btn btn btn-primary'>Cancel</button><div class='dropdown-menu dd-cancel' aria-labelledby='dropdownMenuButton1'><h3>Cancel Order</h3><span class='btn-close2'><i class='bi bi-x-lg'></i></span><ul class='pro-info'><li><h2>Gold1</h2><p><span>NSE</span><span>EQ</span><span>MARKET</span></p><p class='quan'>QTY: 10</p></li><li><p class='drop-price'>51,030.00</p><label class='buy-label'>BUY</label></li></ul><div class='confirm'><div class='btn-part'><button class='btn btn-primary btn-red'>Cancel</button></div></div></div></div></li></ul></div>"
+        },
+        {
+            "id": "2",
+            "name": "<span class='watchlist'>MRF</span><small><span>NSE</span> <span>EQ</span> <span>MARKET</span></small>",
+            "sellbuybtn": "<button type='button' class='btn btn-lightBlue btn-status'>Buy </button>",
+            "qty": "10",
+            "product": "Intraday",
+            "price": "51,030.00",
+            "triggerPrice": "0.00",
+            "status": "<span class='highlight'>Pending</span>",
+            "LTP": "77,839.00",
+            "avgPrice": "77,800.00",
+            "btncolpse": "<div class='btn-group dropstart'> <button type='button' class='btn btn-secondary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'><i class='bi bi-three-dots-vertical'></i> </button> <ul class='dropdown-menu dd-top'> <li> <button type='button' class='modify-btn btn btn-showbuysell' data-modal-type='buy'>Modify</button> </li> <li> <div class='convert dropdown'><button type='button' class='cancel-btn btn dropdown-toggle' id='dropdownMenuButton2' data-bs-toggle='dropdown'  data-bs-auto-close='false'   class='cancel-btn btn btn-primary'>Cancel</button><div class='dropdown-menu dd-cancel' aria-labelledby='dropdownMenuButton2'><h3>Cancel Order</h3><span class='btn-close2'><i class='bi bi-x-lg'></i></span><ul class='pro-info'><li><h2>Gold1</h2><p><span>NSE</span><span>EQ</span><span>MARKET</span></p><p class='quan'>QTY: 10</p></li><li><p class='drop-price'>51,030.00</p><label class='buy-label'>BUY</label></li></ul><div class='confirm'><div class='btn-part'><button class='btn btn-primary btn-red'>Cancel</button></div></div></div></div></li></ul></div>"
+        },
+        {
+            "id": "3",
+            "name": "<span class='watchlist'>CRUDEOIL</span><small><span>NSE</span> <span>EQ</span> <span>MARKET</span></small>",
+            "sellbuybtn": "<button type='button' class='btn btn-red btn-status'>Sell </button>",
+            "qty": "10",
+            "product": "Intraday",
+            "price": "51,030.00",
+            "triggerPrice": "0.00",
+            "status": "<span class='highlight'>Pending</span>",
+            "LTP": "77,839.00",
+            "avgPrice": "77,800.00",
+            "btncolpse": "<div class='btn-group dropstart'> <button type='button' class='btn btn-secondary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'><i class='bi bi-three-dots-vertical'></i> </button> <ul class='dropdown-menu dd-top'> <li> <button type='button' class='modify-btn btn btn-showbuysell' data-modal-type='sell'>Modify</button> </li> <li> <div class='convert dropdown'><button type='button' class='cancel-btn btn dropdown-toggle' id='dropdownMenuButton3' data-bs-toggle='dropdown'  data-bs-auto-close='false' class='cancel-btn btn btn-primary'>Cancel</button><div class='dropdown-menu dd-cancel' aria-labelledby='dropdownMenuButton3'><h3>Cancel Order</h3><span class='btn-close2'><i class='bi bi-x-lg'></i></span><ul class='pro-info'><li><h2>Gold1</h2><p><span>NSE</span><span>EQ</span><span>MARKET</span></p><p class='quan'>QTY: 10</p></li><li><p class='drop-price clr-red'>51,030.00</p><label class='bg-red buy-label'>SELL</label></li></ul><div class='confirm'><div class='btn-part'><button class='btn btn-primary btn-red'>Cancel</button></div></div></div></div></li></ul></div>"
+        },
+        {
+            "id": "4",
+            "name": "<span class='watchlist'>MRF</span><small><span>NSE</span> <span>EQ</span> <span>MARKET</span></small>",
+            "sellbuybtn": "<button type='button' class='btn btn-lightBlue btn-status'>Buy </button>",
+            "qty": "10",
+            "product": "Intraday",
+            "price": "51,030.00",
+            "triggerPrice": "0.00",
+            "status": "<span class='highlight'>Pending</span>",
+            "LTP": "77,839.00",
+            "avgPrice": "77,800.00",
+            "btncolpse": "<div class='btn-group dropstart'> <button type='button' class='btn btn-secondary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'><i class='bi bi-three-dots-vertical'></i> </button> <ul class='dropdown-menu dd-top'> <li> <button type='button' class='modify-btn btn btn-showbuysell' data-modal-type='buy'>Modify</button> </li> <li> <div class='convert dropdown'><button type='button' class='cancel-btn btn dropdown-toggle' id='dropdownMenuButton4' data-bs-toggle='dropdown'  data-bs-auto-close='false'   class='cancel-btn btn btn-primary'>Cancel</button><div class='dropdown-menu dd-cancel' aria-labelledby='dropdownMenuButton4'><h3>Cancel Order</h3><span class='btn-close2'><i class='bi bi-x-lg'></i></span><ul class='pro-info'><li><h2>Gold1</h2><p><span>NSE</span><span>EQ</span><span>MARKET</span></p><p class='quan'>QTY: 10</p></li><li><p class='drop-price'>51,030.00</p><label class='buy-label'>BUY</label></li></ul><div class='confirm'><div class='btn-part'><button class='btn btn-primary btn-red'>Cancel</button></div></div></div></div></li></ul></div>"
+        },
+        {
+            "id": "5",
+            "name": "<span class='watchlist'>MRF</span><small><span>NSE</span> <span>EQ</span> <span>MARKET</span></small>",
+            "sellbuybtn": "<button type='button' class='btn btn-lightBlue btn-status'>Buy </button>",
+            "qty": "10",
+            "product": "Intraday",
+            "price": "51,030.00",
+            "triggerPrice": "0.00",
+            "status": "<span class='highlight'>Pending</span>",
+            "LTP": "77,839.00",
+            "avgPrice": "77,800.00",
+            "btncolpse": "<div class='btn-group dropstart'> <button type='button' class='btn btn-secondary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'><i class='bi bi-three-dots-vertical'></i> </button> <ul class='dropdown-menu dd-top'> <li> <button type='button' class='modify-btn btn btn-showbuysell' data-modal-type='buy'>Modify</button> </li> <li> <div class='convert dropdown'><button type='button' class='cancel-btn btn dropdown-toggle' id='dropdownMenuButton5' data-bs-toggle='dropdown'  data-bs-auto-close='false'   class='cancel-btn btn btn-primary'>Cancel</button><div class='dropdown-menu dd-cancel' aria-labelledby='dropdownMenuButton5'><h3>Cancel Order</h3><span class='btn-close2'><i class='bi bi-x-lg'></i></span><ul class='pro-info'><li><h2>Gold1</h2><p><span>NSE</span><span>EQ</span><span>MARKET</span></p><p class='quan'>QTY: 10</p></li><li><p class='drop-price'>51,030.00</p><label class='buy-label'>BUY</label></li></ul><div class='confirm'><div class='btn-part'><button class='btn btn-primary btn-red'>Cancel</button></div></div></div></div></li></ul></div>"
+        },
+        {
+            "id": "6",
+            "name": "<span class='watchlist'>MRF</span><small><span>NSE</span> <span>EQ</span> <span>MARKET</span></small>",
+            "sellbuybtn": "<button type='button' class='btn btn-lightBlue btn-status'>Buy </button>",
+            "qty": "10",
+            "product": "Intraday",
+            "price": "51,030.00",
+            "triggerPrice": "0.00",
+            "status": "<span class='highlight'>Pending</span>",
+            "LTP": "77,839.00",
+            "avgPrice": "77,800.00",
+            "btncolpse": "<div class='btn-group dropstart'> <button type='button' class='btn btn-secondary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'><i class='bi bi-three-dots-vertical'></i> </button> <ul class='dropdown-menu dd-top'> <li> <button type='button' class='modify-btn btn btn-showbuysell' data-modal-type='buy'>Modify</button> </li> <li> <div class='convert dropdown'><button type='button' class='cancel-btn btn dropdown-toggle' id='dropdownMenuButton6' data-bs-toggle='dropdown'  data-bs-auto-close='false'   class='cancel-btn btn btn-primary'>Cancel</button><div class='dropdown-menu dd-cancel' aria-labelledby='dropdownMenuButton6'><h3>Cancel Order</h3><span class='btn-close2'><i class='bi bi-x-lg'></i></span><ul class='pro-info'><li><h2>Gold1</h2><p><span>NSE</span><span>EQ</span><span>MARKET</span></p><p class='quan'>QTY: 10</p></li><li><p class='drop-price'>51,030.00</p><label class='buy-label'>BUY</label></li></ul><div class='confirm'><div class='btn-part'><button class='btn btn-primary btn-red'>Cancel</button></div></div></div></div></li></ul></div>"
+        },
+        {
+            "id": "7",
+            "name": "<span class='watchlist'>MRF</span><small><span>NSE</span> <span>EQ</span> <span>MARKET</span></small>",
+            "sellbuybtn": "<button type='button' class='btn btn-lightBlue btn-status'>Buy </button>",
+            "qty": "10",
+            "product": "Intraday",
+            "price": "51,030.00",
+            "triggerPrice": "0.00",
+            "status": "<span class='highlight'>Pending</span>",
+            "LTP": "77,839.00",
+            "avgPrice": "77,800.00",
+            "btncolpse": "<div class='btn-group dropstart'> <button type='button' class='btn btn-secondary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'><i class='bi bi-three-dots-vertical'></i> </button> <ul class='dropdown-menu dd-top'> <li> <button type='button' class='modify-btn btn btn-showbuysell' data-modal-type='buy'>Modify</button> </li> <li> <div class='convert dropdown'><button type='button' class='cancel-btn btn dropdown-toggle' id='dropdownMenuButton7' data-bs-toggle='dropdown'  data-bs-auto-close='false'   class='cancel-btn btn btn-primary'>Cancel</button><div class='dropdown-menu dd-cancel' aria-labelledby='dropdownMenuButton7'><h3>Cancel Order</h3><span class='btn-close2'><i class='bi bi-x-lg'></i></span><ul class='pro-info'><li><h2>Gold1</h2><p><span>NSE</span><span>EQ</span><span>MARKET</span></p><p class='quan'>QTY: 10</p></li><li><p class='drop-price'>51,030.00</p><label class='buy-label'>BUY</label></li></ul><div class='confirm'><div class='btn-part'><button class='btn btn-primary btn-red'>Cancel</button></div></div></div></div></li></ul></div>"
+        },
+        {
+            "id": "8",
+            "name": "<span class='watchlist'>MRF</span><small><span>NSE</span> <span>EQ</span> <span>MARKET</span></small>",
+            "sellbuybtn": "<button type='button' class='btn btn-lightBlue btn-status'>Buy </button>",
+            "qty": "10",
+            "product": "Intraday",
+            "price": "51,030.00",
+            "triggerPrice": "0.00",
+            "status": "<span class='highlight'>Pending</span>",
+            "LTP": "77,839.00",
+            "avgPrice": "77,800.00",
+            "btncolpse": "<div class='btn-group dropstart'> <button type='button' class='btn btn-secondary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'><i class='bi bi-three-dots-vertical'></i> </button> <ul class='dropdown-menu dd-top'> <li> <button type='button' class='modify-btn btn btn-showbuysell' data-modal-type='buy'>Modify</button> </li> <li> <div class='convert dropdown'><button type='button' class='cancel-btn btn dropdown-toggle' id='dropdownMenuButton8' data-bs-toggle='dropdown'  data-bs-auto-close='false'   class='cancel-btn btn btn-primary'>Cancel</button><div class='dropdown-menu dd-cancel' aria-labelledby='dropdownMenuButton8'><h3>Cancel Order</h3><span class='btn-close2'><i class='bi bi-x-lg'></i></span><ul class='pro-info'><li><h2>Gold1</h2><p><span>NSE</span><span>EQ</span><span>MARKET</span></p><p class='quan'>QTY: 10</p></li><li><p class='drop-price'>51,030.00</p><label class='buy-label'>BUY</label></li></ul><div class='confirm'><div class='btn-part'><button class='btn btn-primary btn-red'>Cancel</button></div></div></div></div></li></ul></div>"
+        },
+        {
+            "id": "9",
+            "name": "<span class='watchlist'>MRF</span><small><span>NSE</span> <span>EQ</span> <span>MARKET</span></small>",
+            "sellbuybtn": "<button type='button' class='btn btn-lightBlue btn-status'>Buy </button>",
+            "qty": "10",
+            "product": "Intraday",
+            "price": "51,030.00",
+            "triggerPrice": "0.00",
+            "status": "<span class='highlight'>Pending</span>",
+            "LTP": "77,839.00",
+            "avgPrice": "77,800.00",
+            "btncolpse": "<div class='btn-group dropstart'> <button type='button' class='btn btn-secondary dropdown-toggle' data-bs-toggle='dropdown' aria-expanded='false'><i class='bi bi-three-dots-vertical'></i> </button> <ul class='dropdown-menu dd-top'> <li> <button type='button' class='modify-btn btn btn-showbuysell' data-modal-type='buy'>Modify</button> </li> <li> <div class='convert dropdown'><button type='button' class='cancel-btn btn dropdown-toggle' id='dropdownMenuButton9' data-bs-toggle='dropdown'  data-bs-auto-close='false'   class='cancel-btn btn btn-primary'>Cancel</button><div class='dropdown-menu dd-cancel' aria-labelledby='dropdownMenuButton9'><h3>Cancel Order</h3><span class='btn-close2'><i class='bi bi-x-lg'></i></span><ul class='pro-info'><li><h2>Gold1</h2><p><span>NSE</span><span>EQ</span><span>MARKET</span></p><p class='quan'>QTY: 10</p></li><li><p class='drop-price'>51,030.00</p><label class='buy-label'>BUY</label></li></ul><div class='confirm'><div class='btn-part'><button class='btn btn-primary btn-red'>Cancel</button></div></div></div></div></li></ul></div>"
+        }
+      
+    ]
+}

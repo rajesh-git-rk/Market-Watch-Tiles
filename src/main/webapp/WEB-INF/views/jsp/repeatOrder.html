@@ -1,0 +1,1335 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+</head>
+
+
+<body>
+
+
+<!-- Buy/Sell  Order Modal -->
+       
+  <div   class="modal fade background-clickable" id="myModalRepeat" role="dialog" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"  data-keyboard="false" data-backdrop="false">
+<!--    <div   class="modal fade" id="myModal" role="dialog"> -->
+    
+    <div class="modal-dialog modal-lg " > 
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header" id="modelheaderId">
+          <h4 class="modal-title"></h4>
+          	<div class="form-group col-sm-3">
+      		 <label class="stockhead fonts"  id="stocklabelIdRepeat" ></label>
+			<label class="stockhead fonts"  id="stockhiddvalRepeat" name="stockhiddvalRepeat" ></label>
+
+
+			<input type="hidden" id="stockhiddvalRepeat" style= "color: white;" name="stockhiddvalRepeat"  /> 
+			<label class="fonts"  id="mcxexpirylabelIdRepeat"  style= "color: white;text;margin-left: 300px; "></label> 
+			<label class="fonts"  id="nseexpirydatelabelIdRepeat" style= "color: white;text;margin-left: 10px;" ></label> 
+			<label class="fonts"  id="nfoexpirydatelabelIdRepeat" style= "color: white;text;margin-left: 100px; " ></label> 
+			
+      	
+      		     <input type="hidden" id="mcxticksizehiddvalRepeat" style= "color: white;text" name="mcxticksizehiddvalRepeat"  /> 
+      		     <input type="hidden" id="mcxexpirydatehiddvalRepeat" style= "color: white;text" name="mcxexpirydatehiddvalRepeat"  /> 
+      		     <input type="hidden" id="nseticksizehiddvalRepeat" style= "color: white;text" name="nseticksizehiddvalRepeat"  /> 
+      		     <input type="hidden" id="nseexpirydatehiddvalRepeat" style= "color: white;text" name="nseexpirydatehiddvalRepeat"  /> 
+      		     <input type="hidden" id="nfoexpirydatehiddvalRepeat" style= "color: white;text" name="nfoexpirydatehiddvalRepeat"  /> 
+      		
+      		</div>	     
+           <div  class="toggle-btn" id="toggle-btnId" data-toggle="tooltip" title="Switch Buy/Sell" onclick="this.classList.toggle('active'); buysellShow();">
+          <div class="inner-circle"></div>
+          </div> 
+          
+        </div>
+        <div class="modal-body" style="overflow:auto;">
+            
+           <div  class="row ">
+				<div class="form-group col-sm-5">
+				<label class="radio-inline fonts "     data-toggle="tooltip"  data-placement="bottom" title="Cash and Carry" style="padding-left:0px;">
+      			<input type="radio" id="cncIdRepeat" name="cncIdRepeat" disabled="disabled"  style="padding-left:15px;text-align:center;"><span id="cncspanIdRepeat"  class="tooltiptext" style="text-align:center;" >CNC</span>
+      			</label>  
+     		 
+     		 
+     		 
+     		 <label class="radio-inline fonts"   data-toggle="tooltip"  data-placement="bottom" title="Normal" style="padding-left:5px;">
+      			<input type="radio" id="NrmlIdRepeat" name="NrmlIdRepeat" disabled="disabled" style="padding-left:10px;text-align:center;"><span id="NrmlspanIdRepeat" disabled="disabled" style="align=center">NRML</span>
+      			</label>
+      			<label class="radio-inline fonts"  data-toggle="tooltip"  data-placement="bottom" title="Intraday Square off" style="padding-left:5px;">
+      			<input type="radio" id="MisIdRepeat" name="MisIdRepeat"  style="padding-left:10px;text-align:center;"><span  style="align=center">MIS</span>
+      			</label>
+    
+     		</div>
+     		 <div class="form-group col-sm-7" align="right"> 
+     		 <label class="radio-inline fonts" data-toggle="tooltip"  data-placement="bottom" title="Limit"  style="padding-left:5px;">
+      			<input type="radio" id="lmtIdRepeat" style="text-align:center;" name="lmtIdRepeat"  onclick="LmtcheckRepeat()" class="Lmtcheckclass"><span >LMT</span>
+      			</label>
+      			<label class="radio-inline fonts" data-toggle="tooltip"  data-placement="bottom" title="Market"  style="padding-left:5px;">
+      			<input type="radio" id="mktIdRepeat" style="text-align:center;" name="mktIdRepeat"  class="Mktcheckclass" ><span style="align=center">MKT</span>
+      			</label>
+      			<label class="radio-inline fonts"  data-toggle="tooltip"  data-placement="bottom" title="Stop Loss" style="padding-left:5px;">
+      			<input type="radio" id="slIdRepeat" name="slIdRepeat" style="text-align:center;" class="Slcheckclass"><span style="align=center">SL</span>
+      			</label>
+      			
+      			<label class="radio-inline fonts" data-toggle="tooltip"  data-placement="bottom" title="Stop Loss Market"  style="padding-left:5px;">
+      			<input type="radio" id="sl-mIdRepeat" name="sl-mIdRepeat" style="text-align:center;" class="Sl-Mcheckclass"><span class="tooltiptext" style="align=center">SL-M</span>
+      			</label>
+      			
+     		 
+   			</div>
+   			</div>
+   			 
+   			  <div  class="row">
+   			  
+				<div class="form-group col-sm-3 fonts">
+   			  <label  for="QtyIdRepeat">QTY (Lotsize:1)</label>
+   			  <input type="number" style="width: 170px;" id="QtyIdRepeat" onkeydown="if(event.key==='.'){event.preventDefault();}" onchange="myqtyFunctionRepeat()" name="Qtyname" min="1" max="">
+   			  </div>
+   			  
+   			  
+   			  <div  class="form-group col-sm-3 fonts">
+   			   <label  for="priceIdRepeat">PRICE (Ticksize:0.5):</label>
+   			  <input type="number"  style="width: 170px;" disabled="disabled" step="0.5" onkeyup="myPriceonkeyupFunctionRepeat()" onchange="myPriceFunctionRepeat()" value="" id="priceIdRepeat" name="priceIdRepeat" min="0" max="">
+   			  
+   			  </div>
+   			  
+   			  <div  class="form-group col-sm-3 fonts" id="TriggerPriceDivIdRepeat" style="display:none;">
+   			   <label  for="TriggerpriceIdRepeat">TRIGGER PRICE</label>
+   			  <input type="number"  style="width: 170px;"  onkeyup="TriggerPricekeyupFunctionRepeat()"   onchange="TriggerPriceFunctionRepeat()" disabled="disabled" id="TriggerpriceIdRepeat" name="TriggerpriceIdRepeat" min="0" max="">
+   			  </div>
+<!--    			  onchange="TriggerPriceFunction()changeFunction()"  onkeydown="keydownFunction()" onkeyup="keyupFunction()" -->
+   			  <div  class="form-group col-sm-3 fonts" id="CoStoplossDivIdRepeat" style="display:none;">
+   			   <label for="quantity" id="CoStoplosslabellineIdRepeat">STOPLOSS</label>
+   			  <input type="number" style="width: 170px;"   id="CoStoplossIdRepeat" name="CoStoplossIdRepeat" min="0" max="">
+   			  </div> 
+   			  
+   			  <div  class="form-group col-sm-3 fonts">
+   			   <label for="quantity" id="DiscquantityLabelIdRepeat"  >DISC.QTY</label>
+   			  <input type="number" style="width: 170px;"  disabled="disabled"  id="DiscquantityIdRepeat" onchange="mydiscqtyFunctionRepeat()" name="Discquantityname" min="0" max="">
+   			  </div>
+   			  
+   			  <div  class="form-group col-sm-3 fonts" id="stoplessIdRepeat" style="display:none;">
+   			   <label for="quantity"  >STOPLOSS (ABSOLUTE)</label>
+   			  <input type="number" style="width: 155px;padding-left:15px;"   id="stoplossAbsolutequanIdRepeat" name="stoplossAbsolutequanIdRepeat" min="0" max="">
+   			  </div>
+   			  <div  class="form-group col-sm-3 fonts" id="tarketDivIdRepeat" style="display:none;">
+   			   <label for="quantity" id="labellineIdRepeat">TARGET (ABSOLUTE)</label>
+   			  <input type="number" style="width: 170px;"   id="TargetAbsolutequanIdRepeat" name="TargetAbsolutequanIdRepeat" min="0" max="">
+   			  </div> 			 
+   			 
+   			  
+   			  <div  class="form-group col-sm-3 fonts_1" id="TrailingstopIdRepeat" style="display:none;">
+   			   <label for="quantity" id="labellineIdRepeat">TRAILING STOPLOSS (ABSOLUTE)</label>
+   			  <input type="number" style="width: 170px;"   id="TargetstoplossquanIdRepeat" name="TargetstoplossquanIdRepeat" min="0" max="">
+   			  </div>
+   			  
+   			  </div>
+   			    	
+   			  
+   			  <div class="row">
+             
+            <div class=" form-check col-md-6">
+            <br>
+             <label class="radio-inline fonts"  style="padding-left:0px;">
+                         <span id="TriggerPriceErrorIdRepeat" style="color:red;text-align=center;display:none;">*Trigger price shouldn't be greater than price </span>
+                         <input type="hidden" id="TriggerPricehiddenErrorIdRepeat" />
+            </label>
+            
+            <label class="radio-inline fonts"  style="padding-left:0px;">
+                         <span id="DiscQuanErrorIdRepeat" style="color:red;text-align=center;display:none;">*Disclosed quantity cannot be grater than order Quantity </span>
+                         <input type="hidden" id="DiscQuanhiddenErrorIdRepeat" />
+            </label>
+            
+             <label class="radio-inline fonts"  style="padding-left:0px;">
+                         <span id="DiscQuanNSEErrorIdRepeat" style="color:red;text-align=center;display:none;">*Disclosed quantity cannot be less than 10% of your order. </span>
+                         <input type="hidden" id="DiscQuanNSEhiddenErrorIdRepeat" />
+            </label>
+          <label class="radio-inline fonts"  style="padding-left:0px;">
+                         <span id="DiscQuanMCXErrorIdRepeat" style="color:red;text-align=center;display:none;">*Disclosed quantity cannot be less than 25% of your order. </span>
+                         <input type="hidden" id="DiscQuanMCXhiddenErrorIdRepeat" />
+            </label> 
+            <br>
+            <label class="radio-inline fonts"  data-toggle="tooltip"  data-placement="top" title="Regular" style="padding-left:0px;">
+      			<input type="radio"id="RegularOrdIdRepeat" name="RegularOrdIdRepeat" ><span style="align=center">Regular</span>
+      			</label>
+      			<label class="radio-inline fonts" data-toggle="tooltip"  data-placement="top" title="Bracket Order"  id="BracketOrdlabelIdRepeat" style="padding-left:5px;">
+      			<input type="radio" id="BracketOrdIdRepeat" name="BracketOrdIdRepeat"  ><span id="BracketOrdspanIdRepeat" style="align=center">BO</span>
+      			</label>
+      			<label class="radio-inline fonts" data-toggle="tooltip"  data-placement="top" title="Cover Order"  style="padding-left:5px;">
+      			<input type="radio" id="CoverOrdIdRepeat" name="CoverOrdIdRepeat"><span id="CoverOrdspanIdRepeat" style="align=center">CO</span>
+      			</label>
+      			<label class="radio-inline fonts" data-toggle="tooltip"  data-placement="top" title="After Market Order"  style="padding-left:5px;">
+      			<input type="radio" id="AfterMarketOrdIdRepeat" name="AfterMarketOrdIdRepeat"><span  style="align=center">AMO</span>
+      			</label>
+     		
+   			</div> 
+   			
+            <div class="form-group col-md-4 fonts" align="right"> 
+                 <input type="hidden" id="UserID" value="${userId}" />
+                <input type="hidden" id="scripthiddvalRepeat" name="scripthiddvalRepeat"  /> 
+      		  <input type="hidden" id="tokenhiddvalRepeat" name="tokenhiddvalRepeat"  /> 
+      		
+
+                  
+   			 <button type="button" id="buyIdRepeat"  onclick="PlaceOrderbuyfunRepeat()"  class="btn btn-default buysubmitgreen fonts" >BUY</button>
+         	<button type="button" id="sellIdRepeat"  onclick="PlaceOrdersellfunRepeat()" class="btn btn-default sellsumbmitred fonts" >SELL</button> 
+         	</div>  
+              
+         <button type="button"  class="btn btn-default cancelbtn fonts" data-dismiss="modal">CANCEL</button>
+         </div>
+         
+        </div>
+        
+        
+         <div class="modal-footer"> 
+      
+				<div class="form-group col-md-12" align="left" style="padding-left:0px;">
+				<label class="radio-inline fonts" id="DaylabelIdRepeat" data-toggle="tooltip"  data-placement="top" title="Full Day Validity" style="padding-left:0px;">
+      			<input type="radio" id="dayIdRepeat" name="dayIdRepeat"  style="padding-left:5px;"><span style="align=center">DAY</span>
+      			</label>
+      			<label class="radio-inline fonts" id="IoclabelIdRepeat" data-toggle="tooltip"  data-placement="top" title="Immediate or Cancel" style="padding-left:5px;">
+      			<input type="radio" id="iocIdRepeat" name="iocIdRepeat"  style="padding-left:5px;"><span style="align=center">IOC</span>
+      			</label>
+     			<label class="radio-inline fonts" id="GTClabelIdRepeat" data-toggle="tooltip"  data-placement="top" title="GTC" style="padding-left:5px;">
+      			<input type="radio" id="gtcIdRepeat" name="gtcIdRepeat"  style="padding-left:5px;"><span style="align=center">GTC</span>
+      			</label>
+      			<label class="radio-inline fonts" id="GTDlabelIdRepeat" data-toggle="tooltip"  data-placement="top" title="Good Till Date" style="padding-left:5px;">
+      			<input type="radio" id="gtdIdRepeat" name="gtdIdRepeat"   style="padding-left:5px;"><span style="align=center">GTD</span>
+      			</label>
+      			<label class="radio-inline fonts" id="GTTlabelIdRepeat" data-toggle="tooltip"  data-placement="top" title=" Good Till Target"  style="padding-left:5px;">
+      			<input type="radio" id="gttIdRepeat" name="gttIdRepeat"  style="padding-left:5px;"><span id="GTTspanIdRepeat" style="align=center">GTT</span>
+      			</label>
+      			
+      			<label class="datepicker" id="datepickerIdRepeat" style="padding-left:5px;display:none;">
+      			Validity: <input type="text"  class="datepicker" id="datepickerRepeat" >
+      			</label>
+      		
+      			<label class="radio-inline col-sm-3 fonts "  id="GTTstoplossIdRepeat" style="padding-left:5px;display:none;">
+      			<input type="checkbox" id="GTTstoplosscheckIdRepeat" name="GTTstoplosscheckIdRepeat" >
+      			Stoploss: <input type="number" style="width:140px;"  disabled="disabled" id="GTTstoplossValueIdRepeat"><span class="transparent">%</span>
+      			</label>
+      			<label class="radio-inline col-sm-3 fonts "  id="GttTargetIdRepeat" style="padding-left:5px;display:none;">
+      			<input type="checkbox" id="GttTargetcheckIdRepeat" name="GttTargetcheckIdRepeat" >
+      			Target: <input type="number" style="width:140px;" disabled="disabled" id="GttTargetvalueIdRepeat"><span class="transparent">%</span>
+      			</label>
+      			</div>
+     		 </div>
+
+        </div>
+        
+        
+      </div> 
+      
+    </div>
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+
+
+
+//============ Buy/Sell Order Window START==========
+
+
+//modal draggable
+$('.modal').modal({ keyboard: false,
+ show: false
+});
+
+//Jquery draggable
+$('.modal-dialog').draggable({
+handle: ".modal-header"
+});
+
+//disable draggable (Profile-Segments,ConfirmUpdate)
+$(".disable-drag").draggable({ disabled: true });
+
+
+function changeModalContent(event) {
+	 event.stopPropagation();
+// event.preventDefault();
+}
+
+
+
+
+$( "#toggle-btnId" ).click(function() {	
+	  var act = $('.toggle-btn').hasClass("active");
+	  var buyId = document.getElementById("buyIdRepeat");
+	  var sellId = document.getElementById("sellIdRepeat");	  
+	  if(act){		  
+		  buyId.style.display = "none";
+		  sellId.style.display = "block";
+		  $('.inner-circle').css('marginLeft','30px');
+	  }
+	  else {
+		  buyId.style.display = "block";
+		  sellId.style.display = "none";
+		  $('.inner-circle').css('marginLeft','0px');
+	  }	  
+	});
+	
+	 function onclickstocksellbtnToggle(){		
+		 var act = $('.toggle-btn').hasClass("active");			
+			if(act==true){
+				act= true;
+				$('.inner-circle').css('marginLeft','30px');
+			}else if(act==false){	
+				act= true;
+				$('.inner-circle').css('marginLeft','30px');				
+			}			 
+		} 
+	 function onclickstockbuybtnToggle(){		
+		 var act = $('.toggle-btn').hasClass("active");			
+		if(act==true){	
+			act= false;
+				$('.inner-circle').css('marginLeft','0px');				
+			} 
+		else if(act==false){	
+			act= false;
+			$('.inner-circle').css('marginLeft','0px');				
+		} 
+		 
+		} 
+	
+
+/* function stockbuybtnmouseover(id){	
+	document.getElementById(id+"_stockbuysell").style.display = "block";
+}
+function stockbuybtnmouseout(id){
+	document.getElementById(id+"_stockbuysell").style.display = "none";
+} */
+
+	
+	
+
+//=====buy/Sell Price TickSize =============				   
+var value;
+var mcxTicksize;
+var nseTicksize;
+$('#priceIdRepeat').on('change',function(){	
+	  
+	var priceVal=$('#priceIdRepeat').val();
+	var segmentTag=$('#stockhiddvalRepeat').val();
+	
+	//===== MCX Segment ======
+	if(segmentTag=="MCX"){				    	
+	value = document.getElementById("priceIdRepeat").step =priceVal;				    
+	mcxTicksize=$("#mcxticksizehiddvalRepeat").val();
+	/*  if(mcxTicksize=="0.05"){
+		 mcxTicksize=mcxTicksize*10;
+	 	} */
+	document.getElementById("priceIdRepeat").step =mcxTicksize;
+	
+if($(this).val() > value){
+	  var upTagvalue=parseInt(value)+parseInt(mcxTicksize);
+	  document.getElementById("priceIdRepeat").value =upTagvalue;	
+	  
+}else if($(this).val() < value){
+	  var downTagvalue=parseInt(value)-parseInt(mcxTicksize);
+	  document.getElementById("priceIdRepeat").value =downTagvalue;
+}
+
+	}				    	
+	//===== NSE Segment ======
+	else if(segmentTag=="NSE"){	
+	    	value = document.getElementById("priceIdRepeat").step =priceVal;				    
+	      	 nseTicksize=$("#nseticksizehiddvalRepeat").val();
+	      	 
+	      	/*  if(nseTicksize=="0.05"){
+	      		nseTicksize=nseTicksize*10;
+	    	 } */
+	     document.getElementById("priceIdRepeat").step =nseTicksize;	
+	     
+	     if($(this).val() > value){
+	    	  var upTagvalue=parseInt(value)+parseInt(nseTicksize);
+	    	  document.getElementById("priceIdRepeat").value =upTagvalue;	
+	    	  
+	      }else if($(this).val() < value){
+	    	  var downTagvalue=parseInt(value)-parseInt(nseTicksize);
+	    	  document.getElementById("priceIdRepeat").value =downTagvalue;
+	      }
+	     }				    	
+value = $(this).val();
+});			    
+//==============================
+
+
+
+
+$('#cncIdRepeat').click(function() { 
+	 if($("input:radio[name='cncIdRepeat']").is(":checked")) {
+			$('#NrmlIdRepeat').prop('checked', false);
+			$('#MisIdRepeat').prop('checked', false);			
+			$('#stoplessIdRepeat').hide();
+		 	$('#tarketDivIdRepeat').hide();
+		 	$('#TrailingstopIdRepeat').hide();
+	 }
+});
+
+$('#NrmlIdRepeat').click(function() { 
+	
+	alert("test nrml");
+	 if($("input:radio[name='NrmlIdRepeat']").is(":checked")) {
+			$('#cncIdRepeat').prop('checked', false);
+			$('#MisIdRepeat').prop('checked', false);
+		
+			$('#stoplessIdRepeat').hide();
+		 	$('#tarketDivIdRepeat').hide();
+		 	$('#TrailingstopIdRepeat').hide();
+	 }
+	 
+});
+$('#MisIdRepeat').click(function() { 
+	
+	alert("test mis");
+	 if($("input:radio[name='MisIdRepeat']").is(":checked")) {
+			$('#cncIdRepeat').prop('checked', false);
+			$('#NrmlIdRepeat').prop('checked', false);
+			
+			$('#stoplessIdRepeat').hide();
+		 	$('#tarketDivIdRepeat').hide();
+		 	$('#TrailingstopIdRepeat').hide();
+			
+			
+	 }		
+	 
+	
+});
+
+
+
+$('#lmtIdRepeat').click(function() { 
+	
+	
+	if($("input:radio[name='lmtIdRepeat']").is(":checked")) {
+	$('#mktIdRepeat').prop('checked', false);
+	$('#slIdRepeat').prop('checked', false);
+	$('#sl-mIdRepeat').prop('checked', false);
+	
+	
+	$('#stoplessIdRepeat').hide();
+	$('#tarketDivIdRepeat').hide();
+	$('#TrailingstopIdRepeat').hide();
+
+}	
+
+		
+if($("input:radio[name='RegularOrdIdRepeat']").is(":checked")) {
+	$('#stoplessIdRepeat').hide();
+	$('#tarketDivIdRepeat').hide();
+	$('#TrailingstopIdRepeat').hide();
+	$("#DiscquantityIdRepeat").prop("disabled",false);
+	 
+		//LMT
+   $("#TriggerpriceIdRepeat").prop("disabled",true);
+   $("#TriggerpriceIdRepeat").val("0");
+   $("#priceIdRepeat").prop("disabled",false);
+
+
+}
+
+if($("input:radio[name='BracketOrdIdRepeat']").is(":checked")) {
+
+		
+	$('#stoplessIdRepeat').show();
+	$('#tarketDivIdRepeat').show();
+	$('#TrailingstopIdRepeat').show();
+	$("#DiscquantityIdRepeat").prop("disabled",true);
+	$("#DiscquantityIdRepeat").val("0");
+	//LMT
+  $("#TriggerpriceIdRepeat").prop("disabled",true);
+  $("#TriggerpriceIdRepeat").val("0");
+  $("#priceIdRepeat").prop("disabled",false);
+  
+	
+}
+
+if($("input:radio[name='CoverOrdIdRepeat']").is(":checked")) {	
+
+$("#DiscquantityIdRepeat").prop("disabled",true);
+$("#DiscquantityIdRepeat").val("0");
+$("#priceIdRepeat").prop("disabled",false);
+$("#priceIdRepeat").val("0");
+
+}
+
+if($("input:radio[name='AfterMarketOrdIdRepeat']").is(":checked")) {	
+
+$('#stoplessIdRepeat').hide();
+	$('#tarketDivIdRepeat').hide();
+	$('#TrailingstopIdRepeat').hide();
+	 $("#DiscquantityIdRepeat").prop("disabled",false);
+	 
+	//LMT
+$("#TriggerpriceIdRepeat").prop("disabled",true);
+$("#TriggerpriceIdRepeat").val("0");
+$("#priceIdRepeat").prop("disabled",false);
+
+}
+
+});
+
+
+
+$('#mktIdRepeat').click(function() { 
+
+if($("input:radio[name='mktIdRepeat']").is(":checked")) {
+
+	$('#lmtIdRepeat').prop('checked', false);
+	$('#slIdRepeat').prop('checked', false);
+	$('#sl-mIdRepeat').prop('checked', false);
+	 $("#DiscquantityIdRepeat").prop("disabled",false);
+	 
+	$('#stoplessIdRepeat').hide();
+	$('#tarketDivIdRepeat').hide();
+	$('#TrailingstopIdRepeat').hide();
+
+}	
+
+if($("input:radio[name='RegularOrdIdRepeat']").is(":checked")) {
+//MKT
+$("#TriggerpriceIdRepeat").prop("disabled",true);
+$("#TriggerpriceIdRepeat").val("0");
+$("#priceIdRepeat").prop("disabled",true);
+$("#priceIdRepeat").val("0");	  
+
+$('#stoplessIdRepeat').hide();
+	$('#tarketDivIdRepeat').hide();
+	$('#TrailingstopIdRepeat').hide();
+}
+if($("input:radio[name='CoverOrdIdRepeat']").is(":checked")) {	
+
+$("#DiscquantityIdRepeat").prop("disabled",true);
+$("#DiscquantityIdRepeat").val("0");
+$("#priceIdRepeat").prop("disabled",true);
+$("#priceIdRepeat").val("0");
+}
+
+if($("input:radio[name='AfterMarketOrdIdRepeat']").is(":checked")) {
+//MKT
+$("#TriggerpriceIdRepeat").prop("disabled",true);
+$("#TriggerpriceIdRepeat").val("0");
+$("#priceIdRepeat").prop("disabled",true);
+$("#priceIdRepeat").val("0");	  
+
+$('#stoplessIdRepeat').hide();
+	$('#tarketDivIdRepeat').hide();
+	$('#TrailingstopIdRepeat').hide();
+	
+}
+
+});
+$('#slIdRepeat').click(function() { 
+if($("input:radio[name='slIdRepeat']").is(":checked")) {
+
+	$('#lmtIdRepeat').prop('checked', false);
+	$('#mktIdRepeat').prop('checked', false);
+	$('#sl-mIdRepeat').prop('checked', false);
+	
+	$('#stoplessIdRepeat').hide();
+	$('#tarketDivIdRepeat').hide();
+	$('#TrailingstopIdRepeat').hide();
+
+	if($("input:radio[name='RegularOrdIdRepeat']").is(":checked")) {
+		//SL
+		  $("#TriggerpriceIdRepeat").prop("disabled",false);
+	      $("#priceIdRepeat").prop("disabled",false);
+//		      $("#priceId").val("0");
+	      $("#DiscquantityIdRepeat").prop("disabled",false);
+	      		      
+		$('#stoplessIdRepeat').hide();
+	 	$('#tarketDivIdRepeat').hide();
+	 	$('#TrailingstopIdRepeat').hide();
+		
+	}
+	if($("input:radio[name='BracketOrdIdRepeat']").is(":checked")) {    //Bracket Order
+		 
+			 	$('#stoplessIdRepeat').show();
+			 	$('#tarketDivIdRepeat').show();
+			 	$('#TrailingstopIdRepeat').show();
+			 	$('#TargetstoplossquanIdRepeat').val('0');
+			 	$("#DiscquantityIdRepeat").prop("disabled",true);
+			 	$("#DiscquantityIdRepeat").val("0");
+			 //SL
+			     $("#TriggerpriceIdRepeat").prop("disabled",false);
+			     $("#TriggerpriceIdRepeat").val("0");
+			     $("#priceIdRepeat").prop("disabled",false);
+			     
+		 }
+	if($("input:radio[name='AfterMarketOrdIdRepeat']").is(":checked")) {
+		
+		//SL
+		  $("#TriggerpriceIdRepeat").prop("disabled",false);
+	      $("#priceIdRepeat").prop("disabled",false);
+//		      $("#priceId").val("0");
+	      $("#DiscquantityIdRepeat").prop("disabled",false);
+	      
+		$('#stoplessIdRepeat').hide();
+	 	$('#tarketDivIdRepeat').hide();
+	 	$('#TrailingstopIdRepeat').hide();
+	}
+
+}		
+
+});
+$('#sl-mIdRepeat').click(function() { 
+
+if($("input:radio[name='sl-mIdRepeat']").is(":checked")) {
+
+	$('#lmtIdRepeat').prop('checked', false);
+	$('#mktIdRepeat').prop('checked', false);
+	$('#slIdRepeat').prop('checked', false);
+	
+	
+	$('#stoplessIdRepeat').hide();
+	$('#tarketDivIdRepeat').hide();
+	$('#TrailingstopIdRepeat').hide();
+
+}		
+if($("input:radio[name='RegularOrdIdRepeat']").is(":checked")) {
+	//SL-M
+	  $("#TriggerpriceIdRepeat").prop("disabled",false);
+	  $("#TriggerpriceIdRepeat").val("0");
+$("#priceIdRepeat").prop("disabled",true);
+$("#priceIdRepeat").val("0");
+$("#DiscquantityIdRepeat").prop("disabled",false);
+	 $('#stoplessIdRepeat').hide();
+	$('#tarketDivIdRepeat').hide();
+	$('#TrailingstopIdRepeat').hide();
+}
+
+if($("input:radio[name='AfterMarketOrdIdRepeat']").is(":checked")) {
+		 
+//SL-M
+	  $("#TriggerpriceIdRepeat").prop("disabled",false);
+	  $("#TriggerpriceIdRepeat").val("0");
+$("#priceIdRepeat").prop("disabled",true);
+$("#DiscquantityIdRepeat").prop("disabled",false);
+	 $('#stoplessIdRepeat').hide();
+	$('#tarketDivIdRepeat').hide();
+	$('#TrailingstopIdRepeat').hide();
+}
+
+});
+
+
+
+$('#RegularOrdIdRepeat').click(function() {
+	
+	 if($("input:radio[name='RegularOrdIdRepeat']").is(":checked")) {	
+		 radiolmtId = document.getElementById("lmtIdRepeat");
+		 radiolmtId.checked = true;
+			$("#mktIdRepeat").prop("checked",false);
+			$("#slIdRepeat").prop("checked",false);
+			$('#sl-mIdRepeat').prop('checked', false); 
+	}
+	 if($("input:radio[name='RegularOrdIdRepeat']").is(":checked")) {		
+		
+		$('#BracketOrdIdRepeat').prop('checked', false);
+		$('#CoverOrdIdRepeat').prop('checked', false);
+		$('#AfterMarketOrdIdRepeat').prop('checked', false);
+		
+		$("#cncIdRepeat").prop("disabled",false);			
+		$('#NrmlIdRepeat').prop('disabled',false);
+		$("#MisIdRepeat").prop("disabled",false);
+		
+		
+
+		
+		$("#CoStoplossDivIdRepeat").hide();
+		$("#TriggerPriceDivIdRepeat").show();
+		
+		$('#DaylabelIdRepeat').show();
+		$('#IoclabelIdRepeat').show();
+		$('#IoclabelIdRepeat').show();
+		$('#GTClabelIdRepeat').show();
+		$('#GTDlabelIdRepeat').show();
+		$('#GTTlabelIdRepeat').show();
+		
+		$('#stoplessIdRepeat').hide();
+	 	$('#tarketDivIdRepeat').hide();
+	 	$('#TrailingstopIdRepeat').hide();
+	 	
+	 }
+	 var scriptName=$("#stockhiddvalRepeat").val();
+	 if(scriptName==='MCX'){ //MCX
+		 	$('#GTTlabelIdRepeat').hide();
+		 	$("#cncIdRepeat").prop('disabled',true);
+		 	$('#cncIdRepeat').prop('checked', false);
+		 	$('#NrmlIdRepeat').prop('checked', true);
+		 	$('#mktIdRepeat').prop('checked', false);
+		 	$('#slIdRepeat').prop('checked', false);
+		 	$('#sl-mIdRepeat').prop('checked', false);
+		 	$('#MisIdRepeat').prop('checked', false);
+		 	
+		 	
+	 }
+	 if(scriptName==='NSE'){ //NSE
+		 
+		 $('#GTTlabelIdRepeat').show();
+			$('#NrmlIdRepeat').prop('disabled', true);
+			$('#NrmlIdRepeat').prop('checked', false);
+			$('#cncIdRepeat').prop('checked', true);
+			$('#MisIdRepeat').prop('checked', false);
+			
+			$('#iocIdRepeat').prop('checked', false);   	
+			$('#gtcIdRepeat').prop('checked', false);
+			$('#gtdlIdRepeat').prop('checked', false);
+			$('#gttIdRepeat').prop('checked', false);
+			$('#dayIdRepeat').prop("checked",true);
+			
+	 }
+	 if(scriptName==='NFO'){ //F&O
+		 	$('#GTTlabelIdRepeat').hide();
+		 	$("#cncIdRepeat").prop('disabled',true);
+		 	$('#cncIdRepeat').prop('checked', false);
+		 	$('#NrmlIdRepeat').prop('checked', true);
+		 	$('#mktIdRepeat').prop('checked', false);
+		 	$('#slIdRepeat').prop('checked', false);
+		 	$('#sl-mIdRepeat').prop('checked', false);
+		 	$('#MisIdRepeat').prop('checked', false);
+		 	
+		 	
+	 }
+	 
+	 if($("input:radio[name='lmtIdRepeat']").is(":checked")) {
+		 $("#DiscquantityIdRepeat").prop("disabled",false);
+		 $("#DiscquantityIdRepeat").val("0");
+			//LMT
+	      $("#TriggerpriceIdRepeat").prop("disabled",true);
+	      $("#TriggerpriceIdRepeat").val("0");
+	      $("#priceIdRepeat").prop("disabled",false); 
+	      
+	      $("#mktIdRepeat").prop("disabled",false);
+	      $("#slIdRepeat").prop("disabled",false);
+	      $("#sl-mIdRepeat").prop("disabled",false);
+		 
+	 }
+	 if($("input:radio[name='mktIdRepeat']").is(":checked")) {
+		 //MKT
+		 $("#TriggerpriceIdRepeat").prop("disabled",true);
+	     $("#TriggerpriceIdRepeat").val("0");
+	     $("#priceIdRepeat").prop("disabled",true);
+	     $("#priceIdRepeat").val("0");	
+	     
+	     $("#lmtIdRepeat").prop("disable",false);
+	      $("#slIdRepeat").prop("disabled",false);
+	      $("#sl-mIdRepeat").prop("disabled",false);
+	     
+	    	$('#stoplessIdRepeat').hide();
+		 	$('#tarketDivIdRepeat').hide();
+		 	$('#TrailingstopIdRepeat').hide();
+		 }
+	 
+	 if($("input:radio[name='slIdRepeat']").is(":checked")) {
+		 $("#DiscquantityIdRepeat").prop("disabled",false);
+		 $("#DiscquantityIdRepeat").val("0");
+		   //SL
+			  $("#TriggerpriceIdRepeat").prop("disabled",false);
+		      $("#priceIdRepeat").prop("disabled",false);
+		      $("#priceIdRepeat").val("0");
+		      
+		      $("#lmtIdRepeat").prop("disabled",false);
+		      $("#mktIdRepeat").prop("disabled",false);
+		      $("#sl-mIdRepeat").prop("disabled",false);
+		      
+		      
+		      }
+	 
+	 if($("input:radio[name='sl-mIdRepeat']").is(":checked")) {
+	 		//SL-M
+		  	  $("#TriggerpriceIdRepeat").prop("disabled",false);
+		  	  $("#TriggerpriceIdRepeat").val("0");
+		      $("#priceIdRepeat").prop("disabled",true);
+		      $("#priceIdRepeat").val("0");
+		      $("#DiscquantityIdRepeat").prop("disabled",false);
+		     	 $('#stoplessIdRepeat').hide();
+			 	$('#tarketDivIdRepeat').hide();
+			 	$('#TrailingstopIdRepeat').hide();
+			 	
+			 	 $("#lmtIdRepeat").prop("disabled",false);
+			      $("#mktIdRepeat").prop("disabled",false);
+			      $("#slIdRepeat").prop("disabled",false);
+			      
+		 }
+	 
+	 if($("input:radio[name='dayIdRepeat']").is(":checked")) {	
+			
+			$('#iocIdRepeat').prop('checked', false);
+			$('#gtcIdRepeat').prop('checked', false);
+			$('#gtdIdRepeat').prop('checked', false);
+			$('#gttIdRepeat').prop('checked', false);
+	 }
+	 if($("input:radio[name='iocIdRepeat']").is(":checked")) {	
+			
+			$('#dayIdRepeat').prop('checked', false);
+			$('#gtcIdRepeat').prop('checked', false);
+			$('#gtdIdRepeat').prop('checked', false);
+			$('#gttIdRepeat').prop('checked', false);
+	 }
+	 if($("input:radio[name='gtcIdRepeat']").is(":checked")) {	
+			
+			$('#dayIdRepeat').prop('checked', false);
+			$('#iocIdRepeat').prop('checked', false);
+			$('#gtdIdRepeat').prop('checked', false);
+			$('#gttIdRepeat').prop('checked', false);
+	 }
+	 if($("input:radio[name='gtdIdRepeat']").is(":checked")) {	
+			
+			$('#dayIdRepeat').prop('checked', false);
+			$('#iocIdRepeat').prop('checked', false);
+			$('#gtcIdRepeat').prop('checked', false);
+			$('#gttIdRepeat').prop('checked', false);
+	 }
+	 if($("input:radio[name='gttIdRepeat']").is(":checked")) {	
+			
+			$('#dayIdRepeat').prop('checked', false);
+			$('#iocIdRepeat').prop('checked', false);
+			$('#gtcIdRepeat').prop('checked', false);
+			$('#gtdIdRepeat').prop('checked', false);
+	 }
+	 
+	
+});
+
+
+	 $('#BracketOrdIdRepeat').click(function() { 
+		 if($("input:radio[name='BracketOrdIdRepeat']").is(":checked")) {	
+			 radiolmtId = document.getElementById("lmtIdRepeat");
+			 radiolmtId.checked = true;
+			 $('#slIdRepeat').prop('checked', false);
+				}
+		 
+	 if($("input:radio[name='BracketOrdIdRepeat']").is(":checked")) {
+			$('#RegularOrdIdRepeat').prop('checked', false);
+			$('#CoverOrdIdRepeat').prop('checked', false);
+			$('#AfterMarketOrdIdRepeat').prop('checked', false);
+			
+			$("#cncIdRepeat").prop("disabled",true);				
+			$('#NrmlIdRepeat').prop('disabled', true);
+			$("#MisIdRepeat").prop("disabled",true);
+			
+			 
+			 
+			$('#lmtIdRepeat').prop('disabled', false);
+			$("#mktIdRepeat").prop("disabled",true);	
+			$("#mktIdRepeat").prop("checked",false);	
+			$('#slIdRepeat').prop('disabled', false);
+			$('#sl-mIdRepeat').prop('disabled', true);
+
+			$("#CoStoplossDivIdRepeat").hide();
+			$("#TriggerPriceDivIdRepeat").show();
+			
+			
+			$('#IoclabelIdRepeat').hide();   // Validity Checking for BO	
+			$('#GTClabelIdRepeat').hide();
+			$('#GTDlabelIdRepeat').hide();
+			$('#GTTlabelIdRepeat').hide();
+			$('#dayIdRepeat').show();
+			$('#dayIdRepeat').prop("checked",true);
+			
+			$('#stoplessIdRepeat').show();
+		 	$('#tarketDivIdRepeat').show();
+		 	$('#TrailingstopIdRepeat').show();
+		 	$('#TargetstoplossquanIdRepeat').val('0');
+		 	
+		 	$("#datepickerIdRepeat").hide();
+			$("#GTTstoplossIdRepeat").hide();
+			$("#GttTargetIdRepeat").hide();
+	 }
+	
+	 
+	 if($("input:radio[name='lmtIdRepeat']").is(":checked")) {
+		 
+		 
+		 $("#DiscquantityIdRepeat").prop("disabled",true);
+		 $("#DiscquantityIdRepeat").val("0");
+			//LMT
+		     $("#TriggerpriceIdRepeat").prop("disabled",true);
+		     $("#TriggerpriceIdRepeat").val("0");
+		     $("#priceIdRepeat").prop("disabled",false);
+		     
+		      $("#mktIdRepeat").prop("checked",false);
+		      $("#sl-mIdRepeat").prop("checked",false);
+	 }
+	 if($("input:radio[name='slIdRepeat']").is(":checked")) {
+	 
+		 $("#DiscquantityIdRepeat").prop("disabled",true);
+		 	
+			  //SL
+			     $("#TriggerpriceIdRepeat").prop("disabled",false);
+			     $("#TriggerpriceIdRepeat").val("0");
+			     $("#priceIdRepeat").prop("disabled",false);
+		 			
+			     $("#mktIdRepeat").prop("checked",false);
+			      $("#sl-mIdRepeat").prop("checked",false);
+	 }
+	 
+	 
+	 var scriptName=$("#stockhiddvalRepeat").val();
+	 
+	 if(scriptName==='MCX'){ 			//MCX
+		 
+		 $('#GTTlabelIdRepeat').hide();
+		
+		 if($("input:radio[name='BracketOrdIdRepeat']").is(":checked")) {
+				$('#IoclabelIdRepeat').hide();   // Validity Checking for BO	
+				$('#GTClabelIdRepeat').hide();
+				$('#GTDlabelIdRepeat').hide();
+				$('#GTTlabelIdRepeat').hide();
+				$('#dayIdRepeat').show();
+				$('#dayIdRepeat').prop("checked",true);
+				
+				
+				
+				
+			}
+	 }
+	 if(scriptName==='NSE'){ 				//NSE
+		
+		 
+		 $('#GTTlabelIdRepeat').show();
+			
+	 }
+	 
+});
+	 
+	 
+$('#CoverOrdIdRepeat').click(function() {
+		 
+	 if($("input:radio[name='CoverOrdIdRepeat']").is(":checked")) {	
+		 radiolmtId = document.getElementById("lmtIdRepeat");
+		 radiolmtId.checked = true;
+		 $("#mktIdRepeat").prop("checked",false);
+			}
+	 
+		 if($("input:radio[name='CoverOrdIdRepeat']").is(":checked")) {
+			$('#RegularOrdIdRepeat').prop('checked', false);
+			$('#BracketOrdIdRepeat').prop('checked', false);
+			$('#AfterMarketOrdIdRepeat').prop('checked', false);
+			$("#DiscquantityIdRepeat").prop("disabled",false);
+			$("#DiscquantityIdRepeat").val("0");
+			
+			$("#CoStoplossDivIdRepeat").show();
+			$("#TriggerPriceDivIdRepeat").hide();
+			$("#DiscquantityIdRepeat").prop("disabled",true);
+			$('#stoplessIdRepeat').hide();
+		 	$('#TrailingstopIdRepeat').hide();
+		 	$('#tarketDivIdRepeat').hide();
+			
+			$("#cncIdRepeat").prop("disabled",true);				
+			$('#NrmlIdRepeat').prop('disabled', true);
+			$("#MisIdRepeat").prop("disabled",true);
+			
+			$("#lmtIdRepeat").prop("disabled",false);
+			$("#mktIdRepeat").prop("disabled",false);
+			$("#slIdRepeat").prop("disabled",true);			
+			$('#sl-mIdRepeat').prop('disabled', true);
+			$("#slIdRepeat").prop("checked",false);
+			$('#sl-mIdRepeat').prop('checked', false);
+			 			
+			$('#IoclabelIdRepeat').hide();  // Validity Checking for BO
+			$('#GTClabelIdRepeat').hide();
+			$('#GTDlabelIdRepeat').hide();
+			$('#GTTlabelIdRepeat').hide();
+			$('#DaylabelIdRepeat').show();
+			$('#dayIdRepeat').prop("checked",true);
+			
+			
+			$("#datepickerIdRepeat").hide();
+			$("#GTTstoplossIdRepeat").hide();
+			$("#GttTargetIdRepeat").hide();
+		 }
+		 
+		 if($("input:radio[name='lmtIdRepeat']").is(":checked")) {
+			 $("#DiscquantityIdRepeat").prop("disabled",false);
+			 $("#DiscquantityIdRepeat").val("0");
+				//LMT
+		      $("#TriggerpriceIdRepeat").prop("disabled",true);
+		      $("#TriggerpriceIdRepeat").val("0");
+		      $("#priceIdRepeat").prop("disabled",false); 
+		      
+		      $("#slIdRepeat").prop("checked",false);
+		      $("#sl-mIdRepeat").prop("checked",false);
+			 
+		 }
+		 if($("input:radio[name='mktIdRepeat']").is(":checked")) {
+			 $("#DiscquantityIdRepeat").prop("disabled",false);
+			 $("#DiscquantityIdRepeat").val("0");
+			   //SL
+				  $("#TriggerpriceIdRepeat").prop("disabled",false);
+			      $("#priceIdRepeat").prop("disabled",false);
+			      $("#priceIdRepeat").val("0"); 
+			      $("#slIdRepeat").prop("checked",false);
+			      $("#sl-mIdRepeat").prop("checked",false);
+		 
+	}
+		 var scriptName=$("#stockhiddvalRepeat").val();
+		 if(scriptName==='MCX'){ //MCX
+			 
+			 $('#GTTlabelIdRepeat').hide();
+			 
+			 if($("input:radio[name='CoverOrdIdRepeat']").is(":checked")) {
+					$('#IoclabelIdRepeat').hide();   // Validity Checking for BO	
+					$('#GTClabelIdRepeat').hide();
+					$('#GTDlabelIdRepeat').hide();
+					$('#GTTlabelIdRepeat').hide();
+					$('#dayIdRepeat').show();
+					$('#dayIdRepeat').prop("checked",true);
+				}
+		 }
+		 if(scriptName==='NSE'){ //NSE
+			
+			 $('#GTTlabelIdRepeat').show();
+				
+		 }
+		 
+		
+	});
+
+
+
+	 
+$('#AfterMarketOrdIdRepeat').click(function() {
+	 
+	 if($("input:radio[name='AfterMarketOrdIdRepeat']").is(":checked")) {
+		 radiolmtId = document.getElementById("lmtIdRepeat");
+		 radiolmtId.checked = true;
+			$("#mktIdRepeat").prop("checked",false);
+			$("#slIdRepeat").prop("checked",false);
+			$('#sl-mIdRepeat').prop('checked', false); 
+		
+			}
+	 
+	 if($("input:radio[name='AfterMarketOrdIdRepeat']").is(":checked")) {
+		 
+		$('#RegularOrdIdRepeat').prop('checked', false);
+		$('#BracketOrdIdRepeat').prop('checked', false);
+		$('#CoverOrdIdRepeat').prop('checked', false);
+		$("#DiscquantityIdRepeat").prop("disabled",false);
+		
+		$("#cncIdRepeat").prop("disabled",false);			
+		$('#NrmlIdRepeat').prop('disabled', false);
+		$("#MisIdRepeat").prop("disabled",false);
+		
+		
+		$("#mktIdRepeat").prop("disabled",false);
+		$("#slIdRepeat").prop("disabled",false);
+		$('#sl-mIdRepeat').prop('disabled', false); 
+		
+		$("#CoStoplossDivIdRepeat").hide();
+		$("#TriggerPriceDivIdRepeat").show();
+		$("#DiscquantityIdRepeat").prop("disabled",false);
+		$("#DiscquantityIdRepeat").val(0);
+		
+		$('#stoplessIdRepeat').hide();
+	 	$('#tarketDivIdRepeat').hide();
+	 	$('#TrailingstopIdRepeat').hide();
+	 	
+	 				
+		$('#IoclabelIdRepeat').show();  // Validity Checking for BO
+		$('#GTClabelIdRepeat').show();
+		$('#GTDlabelIdRepeat').show();
+		$('#GTTlabelIdRepeat').show();
+	 }
+	 
+	 var scriptName=$("#stockhiddvalRepeat").val();
+	 
+	 if(scriptName==='MCX'){ //MCX
+		 	$('#GTTlabelIdRepeat').hide();
+		 	$("#cncIdRepeat").prop('disabled',true);
+		 	$('#cncIdRepeat').prop('checked', false);
+		 	radioNrmlId = document.getElementById("NrmlId");
+		 	radioNrmlId.checked = true;
+		 	
+		 	$('#NrmlIdRepeat').prop('checked', true);
+		 	$('#MisIdRepeat').prop('checked', false);
+
+	 }
+	 if(scriptName==='NSE'){ //NSE
+		 
+		 $('#GTTlabelIdRepeat').show();
+			$('#NrmlIdRepeat').prop('disabled', true);
+			$('#NrmlIdRepeat').prop('checked', false);
+			$('#cncIdRepeat').prop('checked', true);
+			radiocncId = document.getElementById("cncIdRepeat");
+			radiocncId.checked = true;
+		 	
+			$('#MisIdRepeat').prop('checked', false);
+			
+			$('#iocIdRepeat').prop('checked', false);   	
+			$('#gtcIdRepeat').prop('checked', false);
+			$('#gtdlIdRepeat').prop('checked', false);
+			$('#gttIdRepeat').prop('checked', false);
+			$('#dayIdRepeat').prop("checked",true);
+	 }
+
+	 if(scriptName==='NFO'){ //F&O
+		 	$('#GTTlabelIdRepeat').hide();
+		 	$("#cncIdRepeat").prop('disabled',true);
+		 	$('#cncIdRepeat').prop('checked', false);
+		 	$('#NrmlIdRepeat').prop('checked', true);
+		 	$('#mktIdRepeat').prop('checked', false);
+		 	$('#slIdRepeat').prop('checked', false);
+		 	$('#sl-mIdRepeat').prop('checked', false);
+		 	$('#MisIdRepeat').prop('checked', false);
+		 	
+		 	
+	 }
+	
+	 if($("input:radio[name='lmtIdRepeat']").is(":checked")) {
+		 $("#DiscquantityIdRepeat").prop("disabled",false);
+		 $("#DiscquantityIdRepeat").val("0");
+			//LMT
+	      $("#TriggerpriceIdRepeat").prop("disabled",true);
+	      $("#TriggerpriceIdRepeat").val("0");
+	      $("#priceIdRepeat").prop("disabled",false); 
+	      
+	      $("#slIdRepeat").prop("checked",false);
+	      $("#mktIdRepeat").prop("disabled",false);
+	      $("#sl-mIdRepeat").prop("disabled",false);
+	      
+		 
+	 }
+	 if($("input:radio[name='mktIdRepeat']").is(":checked")) {
+		 //MKT
+		 $("#TriggerpriceIdRepeat").prop("disabled",true);
+	     $("#TriggerpriceIdRepeat").val("0");
+	     $("#priceIdRepeat").prop("disabled",true);
+	     $("#priceIdRepeat").val("0");	  
+	     
+	    	$('#stoplessIdRepeat').hide();
+		 	$('#tarketDivIdRepeat').hide();
+		 	$('#TrailingstopIdRepeat').hide();
+		 	
+		 	$("#slIdRepeat").prop("checked",false);
+		      $("#lmtIdRepeat").prop("disabled",false);
+		      $("#sl-mIdRepeat").prop("disabled",false);
+		      
+		 }
+	 
+	 if($("input:radio[name='slIdRepeat']").is(":checked")) {
+		 $("#DiscquantityIdRepeat").prop("disabled",false);
+		 $("#DiscquantityIdRepeat").val("0");
+		   //SL
+			  $("#TriggerpriceIdRepeat").prop("disabled",false);
+		      $("#priceIdRepeat").prop("disabled",false);
+		      $("#priceIdRepeat").val("0");    
+	 
+		      $("#lmtIdRepeat").prop("checked",false);
+		      $("#mktIdRepeat").prop("disabled",false);
+		      $("#sl-mIdRepeat").prop("disabled",false);
+		      
+			}
+	 if($("input:radio[name='sl-mIdRepeat']").is(":checked")) {
+	 		//SL-M
+		  	  $("#TriggerpriceIdRepeat").prop("disabled",false);
+		  	  $("#TriggerpriceIdRepeat").val("0");
+		      $("#priceIdRepeat").prop("disabled",true);
+		      $("#priceIdRepeat").val("0");
+		      $("#DiscquantityIdRepeat").prop("disabled",false);
+		     	 $('#stoplessIdRepeat').hide();
+			 	$('#tarketDivIdRepeat').hide();
+			 	$('#TrailingstopId').hide();
+			 	
+			 	$("#slIdRepeat").prop("checked",false);
+			      $("#mktIdRepeat").prop("disabled",false);
+			      $("#lmtIdRepeat").prop("disabled",false);
+			      
+		 }
+	 if($("input:radio[name='dayIdRepeat']").is(":checked")) {	
+			
+			$('#iocIdRepeat').prop('checked', false);
+			$('#gtcIdRepeat').prop('checked', false);
+			$('#gtdIdRepeat').prop('checked', false);
+			$('#gttIdRepeat').prop('checked', false);
+	 }
+	 if($("input:radio[name='iocIdRepeat']").is(":checked")) {	
+			
+			$('#dayIdRepeat').prop('checked', false);
+			$('#gtcIdRepeat').prop('checked', false);
+			$('#gtdIdRepeat').prop('checked', false);
+			$('#gttIdRepeat').prop('checked', false);
+	 }
+	 if($("input:radio[name='gtcIdRepeat']").is(":checked")) {	
+			
+			$('#dayIdRepeat').prop('checked', false);
+			$('#iocIdRepeat').prop('checked', false);
+			$('#gtdIdRepeat').prop('checked', false);
+			$('#gttIdRepeat').prop('checked', false);
+	 }
+	 if($("input:radio[name='gtdId']").is(":checked")) {	
+			
+			$('#dayIdRepeat').prop('checked', false);
+			$('#iocIdRepeat').prop('checked', false);
+			$('#gtcIdRepeat').prop('checked', false);
+			$('#gttIdRepeat').prop('checked', false);
+	 }
+	 if($("input:radio[name='gttIdRepeat']").is(":checked")) {	
+			
+			$('#dayIdRepeat').prop('checked', false);
+			$('#iocIdRepeat').prop('checked', false);
+			$('#gtcIdRepeat').prop('checked', false);
+			$('#gtdIdRepeat').prop('checked', false);
+	 }
+	 
+});
+
+
+
+$('#dayIdRepeat').click(function() {
+	 
+	 if($("input:radio[name='dayIdRepeat']").is(":checked")) {	
+		
+		$('#iocIdRepeat').prop('checked', false);
+		$('#gtcIdRepeat').prop('checked', false);
+		$('#gtdIdRepeat').prop('checked', false);
+		$('#gttIdRepeat').prop('checked', false);
+		
+		$("#datepickerIdRepeat").hide();
+		$("#GTTstoplossIdRepeat").hide();
+		$("#GttTargetIdRepeat").hide();
+		$('#stoplessIdRepeat').hide();		
+	 	$('#tarketDivIdRepeat').hide();
+	 	$('#TrailingstopIdRepeat').hide();
+	 	
+	 
+	 }
+	
+});
+
+
+$('#iocIdRepeat').click(function() {
+	 
+	 if($("input:radio[name='iocIdRepeat']").is(":checked")) {	
+			
+		$('#dayIdRepeat').prop('checked', false);
+		$('#gtcIdRepeat').prop('checked', false);
+		$('#gtdIdRepeat').prop('checked', false);
+		$('#gttIdRepeat').prop('checked', false);
+		
+		$("#datepickerIdRepeat").hide();
+		$("#GTTstoplossIdRepeat").hide();
+		$("#GttTargetIdRepeat").hide();
+		$('#stoplessIdRepeat').hide();
+	 	$('#tarketDivIdRepeat').hide();
+	 	$('#TrailingstopIdRepeat').hide();
+	 }
+	
+});
+
+
+
+$('#gtcIdRepeat').click(function() {
+	 
+	 if($("input:radio[name='gtcIdRepeat']").is(":checked")) {	
+			
+		$('#dayIdRepeat').prop('checked', false);
+		$('#iocIdRepeat').prop('checked', false);
+		$('#gtdIdRepeat').prop('checked', false);
+		$('#gttIdRepeat').prop('checked', false);
+		
+		$("#datepickerIdRepeat").hide();
+		$("#GTTstoplossIdRepeat").hide();
+		$("#GttTargetIdRepeat").hide();
+		$('#stoplessIdRepeat').hide();
+	 	$('#tarketDivIdRepeat').hide();
+	 	$('#TrailingstopIdRepeat').hide();
+	 }
+	
+});
+
+
+
+
+$('#gtdIdRepeat').click(function() {
+	 
+	 if($("input:radio[name='gtdIdRepeat']").is(":checked")) {	
+			
+		$('#iocIdRepeat').prop('checked', false);
+		$('#dayIdRepeat').prop('checked', false);
+		$('#gtcIdRepeat').prop('checked', false);
+		$('#gttIdRepeat').prop('checked', false);
+		
+		
+		$("#datepickerIdRepeat").show();	 //Good till date datpicker enable here...,
+				
+		$("#GTTstoplossIdRepeat").hide();
+		$("#GttTargetIdRepeat").hide();
+		$('#stoplessIdRepeat').hide();
+	 	$('#tarketDivIdRepeat').hide();
+	 	$('#TrailingstopIdRepeat').hide();
+	 }
+
+});
+
+
+
+
+$('#gttIdRepeat').click(function() {
+	 
+	 if($("input:radio[name='gttIdRepeat']").is(":checked")) {	
+		
+		$('#iocIdRepeat').prop('checked', false);
+		$('#dayIdRepeat').prop('checked', false);
+		$('#gtdIdRepeat').prop('checked', false);
+		$('#gtcIdRepeat').prop('checked', false);
+		
+		$("#GTTstoplossIdRepeat").show();
+		$("#GttTargetIdRepeat").show();
+		$("#GTTstoplossValueIdRepeat").prop("disabled",true);
+		$("#GTTstoplossValueIdRepeat").prop("disabled",true);
+		 $("#GTTstoplossValueIdRepeat").val("0");
+		 $("#GttTargetvalueIdRepeat").val("0");
+		
+		$("#datepickerIdRepeat").hide();		
+		$('#stoplessIdRepeat').hide();
+	 	$('#tarketDivIdRepeat').hide();
+	 	$('#TrailingstopIdRepeat').hide();
+	 }
+});
+
+
+	$('#GTTstoplosscheckIdRepeat').click(function() {
+	 if (document.getElementById('GTTstoplosscheckIdRepeat').checked) {
+		$("#GTTstoplossValueIdRepeat").prop("disabled",false);
+		
+		}
+	 else{
+		 $("#GTTstoplossValueIdRepeat").prop("disabled",true);
+		 $("#GTTstoplossValueIdRepeat").val("0");
+	 }
+	});
+	
+	
+	
+	
+	$('#GttTargetcheckIdRepeat').click(function() {
+		 if (document.getElementById('GttTargetcheckIdRepeat').checked) {
+			$("#GttTargetvalueIdRepeat").prop("disabled",false);
+			
+			}
+		 else{
+			 $("#GttTargetvalueIdRepeat").prop("disabled",true);
+			 $("#GttTargetvalueIdRepeat").val("0");
+		 }
+		});
+	
+	
+	//============ Buy/Sell Order Window END==========	
+	
+
+
+</script>
+
+
+
+
+</body>
+</html>

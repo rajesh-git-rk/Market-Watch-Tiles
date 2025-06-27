@@ -1,0 +1,4 @@
+com\topaz\trading\controller\MarketwatchProvider.class
+com\topaz\trading\repository\UserRepositiory.class
+com\topaz\trading\model\user.class
+com\topaz\trading\model\Usermodel.class

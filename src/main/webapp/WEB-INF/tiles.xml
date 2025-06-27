@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE tiles-definitions PUBLIC  
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+       
+       <tiles-definitions>  
+    <definition name="base.definition"  
+        template="/WEB-INF/views/jsp/master.jsp">  
+        <put-attribute name="title" value="" />  
+        <put-attribute name="header" value="/WEB-INF/views/jsp/header.jsp" />  
+        <put-attribute name="search" value="/WEB-INF/views/jsp/leftside.jsp" />  
+        <put-attribute name="body" value="" />  
+        <put-attribute name="footer" value="/WEB-INF/views/jsp/footer.jsp" />  
+    </definition>  
+   
+    <definition name="chartIQ"  template="/WEB-INF/views/jsp/master.jsp">  
+        <put-attribute name="title" value="" />  
+        <put-attribute name="header" value="/WEB-INF/views/jsp/header.jsp" />
+        <put-attribute name="search" value="/WEB-INF/views/jsp/leftside.jsp" />
+        <put-attribute name="body" value="/WEB-INF/views/jsp/chart-iframe.jsp" />
+       <!--  <put-attribute name="body" value="/WEB-INF/views/jsp/chartIQ.jsp" />   -->
+    </definition>  
+    
+    
+    <definition name="home" extends="base.definition">  
+        <put-attribute name="title" value="Exchange" />        
+        <put-attribute name="body" value="/WEB-INF/views/jsp/maincontent.jsp" />  
+    </definition>
+    
+     <!-- <definition name="home" extends="base.definition">  
+        <put-attribute name="title" value="Exchange" />        
+        <put-attribute name="body" value="/WEB-INF/views/jsp/exchange-light-layout.jsp" />  
+    </definition> -->
+    
+   <!--  <definition name="dashboardmain" extends="base.definition">  
+        <put-attribute name="title" value="Exchange" />        
+        <put-attribute name="body" value="/WEB-INF/views/jsp/home.jsp" />  
+    </definition> -->
+    
+     
+  
+</tiles-definitions>  
